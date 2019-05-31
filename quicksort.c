@@ -20,17 +20,12 @@ int qout = 0;						//position of message extracted from queue
 int message_count = 0;					//number of messages in queue
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
-/* Stucts */
+/* Structs */
 struct message {
 	int type;	//type of message: 0 == WORK, 1 == FINISH, 2 == SHUTDOWN
 	int first;	//position of the first element of the matrix fragment in message
 	int last;	//position of the last element of the matrix fragment in message
 };
-
-//struct thread_params {		//for every thread
-//	double *a;
-//	int n;
-//};
 
 struct message msg_queue[N];
 
